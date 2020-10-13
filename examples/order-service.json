@@ -1,0 +1,67 @@
+{
+  "name": "order-service",
+  "description": "Example microservice",
+  "pages": [
+    {
+      "type": "json-rpc",
+      "body": {
+        "methods": [
+          {
+            "name": "createOrder",
+            "description": "Create an order",
+            "params": {
+              "type": "object",
+              "properties": {
+                "orderUuid": {
+                  "type": "string"
+                },
+                "date": {
+                  "type": "string|null",
+                  "default": null
+                },
+                "status": {
+                  "type": "string|null",
+                  "default": "open"
+                },
+                "currencyIso": {
+                  "type": "string"
+                },
+                "totalPrice": {
+                  "type": "int|null",
+                  "default": null
+                }
+              },
+              "required": [
+                "orderUuid",
+                "currencyIso"
+              ]
+            },
+            "result": {
+              "type": "array"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "getOrder",
+            "description": "Get an order by its uuid",
+            "params": {
+              "type": "object",
+              "properties": {
+                "orderUuid": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "orderUuid"
+              ]
+            },
+            "result": {
+              "type": "array"
+            },
+            "deprecated": false
+          }
+        ]
+      }
+    }
+  ]
+}
